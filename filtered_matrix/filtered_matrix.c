@@ -6,7 +6,7 @@
 /*   By: jreyes-s <jreyes-s@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:06:42 by jreyes-s          #+#    #+#             */
-/*   Updated: 2025/11/16 19:12:31 by jreyes-s         ###   ########.fr       */
+/*   Updated: 2025/11/16 19:54:48 by jreyes-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,9 +63,7 @@ char	**ft_filtered_matrix(char **matrix)
 
 	x = 0;
 	y = 0;
-	while (matrix[x][y] != matrix[x][y]);
-	{
-	}
+	
 	return (matrix);
 }
 
