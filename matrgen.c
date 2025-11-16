@@ -1,9 +1,9 @@
 
 #include <unistd.h>
 
-//char	**ft_matriz(int na, int nb, int nc, int nd);
+char	**ft_matriz(char na, char nb, char nc, char nd);
 
-void	matrgen()
+void	matrgen(int	bc)
 {
 	char	na;
 	char	nb;
@@ -16,66 +16,68 @@ void	matrgen()
 	nd = '1';
 	while (na < '5')
 	{
-		nb = na + 1;
 		while(nb < '5')
 		{
-			nc = nb + 1;
 			while (nc < '5')
 			{
-				nd = nc + 1;
 				while (nd < '5')
 				{
-					write(1, &na , 4);
-					write(1, &nb , 4);
-					write(1, &nc , 4);
-					write(1, &nd , 4);
-					write(1, "\n", 4);
+					ft_matriz(na,nb,nc,nd);
+					ft_matriz(nb,nc,nd,na);
+					ft_matriz(nc,nd,na,nb);
+					ft_matriz(nd,na,nb,nc);
+					write(1,"\n",1);
 					nd++;
 				}
-				if ( nd > '4')
-					nd = '0';
+				if (nd > '4')
+					nd = '1';
 				nc++;
+//				write(1,"\n",1);
 			}
 			if ( nc > '4')
-				nc = '0';
+				nc = '1';
 			nb++;
 		}
-		if ( nb > '4')
-			nb = '0';
+		if (nb > '4')
+			nb = '1';
 		na++;
 		if (na > '4')
-			na = '0';
+			break ;
 	}
 }
 
-/*char    **ft_matriz(int na, int nb, int nc, int nd)
+char    **ft_matriz(char na, char nb, char nc, char nd)
 {
 	int     rown;
 	int     coln;
 	int     irow;
 	int     icol;
-	char    matrx[rown][coln];
+	char	**matrx;
 
-	rown = 4;coln = 4;
+	rown = 4;
+	coln = 4;
+	irow = 0;
 	while (irow < rown)
 	{
 		icol = 0;
 		while (icol < coln)
 		{
-			write(1, &na + '0', 1);
-			write(1, &nb + '0', 1);
-			write(1, &nc + '0', 1);
+			write(1, &na, 1);
+			write(1, &nb, 1);
+			write(1, &nc, 1);
+			write(1, &nd, 1);
+			write(1,"\n", 1);
 			icol++;
-			write(1, &nd + '0', 1);
 		}
-		write(1,"\n", 1);
+//		write(1,"\n", 1);
 		irow++;
 	}
-	return (**matrx);
-}*/
+	write(1,"\n", 1);
+	return (matrx);
+}
 
 int     main(void)
 {
-         matrgen();
+         matrgen(0);
          return (0);
 }
