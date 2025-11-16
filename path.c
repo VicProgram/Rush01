@@ -6,11 +6,9 @@
 /*   By: albben-a <albben-a@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 14:01:23 by albben-a          #+#    #+#             */
-/*   Updated: 2025/11/16 17:37:39 by albben-a         ###   ########.fr       */
+/*   Updated: 2025/11/16 18:00:52 by albben-a         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdlib.h>
 
 int    ft_rowd(int crow, int ccol, int i, char paths[16][6], char matrix[6][6])
 {
